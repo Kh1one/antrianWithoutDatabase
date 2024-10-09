@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>antrii</h1>
+    <form action="/" method="POST">
+
+        <div class="login-wrapper">
+            <div class="login-box">
+      
+              {{ if .error }}
+                <div class="alert alert-danger">
+                  {{ .error }}
+                </div>
+              {{ end }}
+      
+              <div class="login-header">
+                <span>Antri</span>
+      
+                <div class="input_box">
+                    <input type="text" name="name" id="user" class="input-field" required />
+                    <label for="user" class="label">name</label>
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+              <!-- <div class="invalid-feedback">
+                {{ .validation.email }}
+              </div> -->
+      
+            </div>
+              <div class="input_box">
+                <input type="text" name="credits" id="user" class="input-field" required />
+                <label for="user" class="label">Credits</label>
+                <i class="fa-solid fa-phone"></i>
+              </div>
+      
+              <div class="input_box">
+                <input type="submit" class="input-submit" value="Antri"/>
+              </div>
+      
+            
+            </div>
+          
+          </div>
+      </form>
+</body>
+</html>

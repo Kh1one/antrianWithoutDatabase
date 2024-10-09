@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Username kamu: {{.username}}</h1>
+  <h2>Current queue</h2>
+    
+        <!-- TABLE START -->
+        <table class="content-table">
+            <thead>
+              <!-- JUDUL KOLOM / TABLE HEAD -->
+              <tr>
+                <th>Position</th>
+                <th>Name</th>
+                <th>Credits</th>
+              </tr>
+            </thead>
+  
+            <!-- ISI TABEL START-->
+            <tbody>
+              {{range .currentQueue}}
+  
+              <tr>
+                <td>{{.Position}}</td>
+                <td>{{.Name}}</td>
+                <td>{{.Credits}}</td>
+  
+              </tr>
+              {{end}}
+            </tbody>
+
+
+    <h1>Main queue</h1>
+    
+        <!-- TABLE START -->
+        <table class="content-table">
+            <thead>
+              <!-- JUDUL KOLOM / TABLE HEAD -->
+              <tr>
+                <th>Position</th>
+                <th>Name</th>
+                <th>Credits</th>
+              </tr>
+            </thead>
+  
+            <!-- ISI TABEL START-->
+            <tbody>
+              {{range .mainQueue}}
+  
+              <tr>
+                <td>{{.Position}}</td>
+                <td>{{.Name}}</td>
+                <td>{{.Credits}}</td>
+  
+              </tr>
+              {{end}}
+            </tbody>
+
+            <div>
+            <form action="/queue" method="POST">
+              <!-- <input type="hidden" name="reservationId" value="{{ .ReservationId}}"> -->
+              <input type="number" name="credits" autocomplete="off">
+              <button type="submit">Sudah main berapa kredit?</button>
+            </form>
+          </div>
+<!-- 
+            <form action="/queue" method="POST">
+              <input type="hidden" name="reservationId" value="{{ .ReservationId}}">
+              <input type="hidden" name="action" value="premium" autocomplete="off">
+              <button type="submit">Sudah main premium</button>
+            </form> -->
+
+             <a href="/logout">
+              Aku mau pulang
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </a>
+</body>
+</html>
